@@ -1,0 +1,72 @@
+@import "config/style/colors";
+
+.loginPage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0rem;
+    background-color: $background_color5;
+    height: 100%;
+
+    & > h1 {
+        color: $task_title_color;
+        font-weight: 900;
+    }
+
+    .login__title {
+        font-weight: 600;
+        color: $heading__color;
+    }
+
+    .loginPage__body {
+        width: 100%;
+        max-width: 500px;
+        background-color: white;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 2rem;
+        margin: 1rem;
+        box-shadow: 0px 10px 10px rgba(black, 0.1);
+        border-radius: 3px;
+
+        button {
+            border-radius: 3px;
+            box-shadow: 0px 0px 7px rgba(black, 0.2);
+            font-weight: 600;
+            color: $heading__color;
+            border: 3px solid transparent;
+            transition: all 0.2s ease-in-out;
+            padding: 0.5rem;
+
+            & > i {
+                margin-right: 1rem;
+            }
+
+            &.login__google {
+                background-color: white;
+
+                &:hover {
+                    border-color: $light_shade;
+                }
+            }
+
+            &.login__submit {
+                &:hover {
+                    border-color: rgba($background_color5, 1);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .loginPage {
+        .loginPage__body {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+}

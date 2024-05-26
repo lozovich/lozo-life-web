@@ -1,0 +1,91 @@
+@import "../../config//style//colors.scss";
+
+.invite {
+    position: relative;
+    height: 100vh;
+    background-color: $task_color;
+
+    .invite__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 1rem;
+
+        .invite__info {
+            padding: 1rem;
+
+            h3 {
+                font-weight: bold;
+                font-size: 3.3rem;
+
+                span {
+                    color: $button_color_1;
+                }
+            }
+
+            p {
+                color: $task_color3;
+                text-align: justify;
+            }
+
+            .buttonGroup {
+                display: flex;
+                margin-top: 1.5rem;
+
+                button {
+                    margin-right: 10px;
+                    font-size: 1.2rem;
+                    border-radius: 3px;
+
+                    &.accept {
+                        background-color: $button_color_1;
+                        color: white;
+                    }
+
+                    &.back {
+                        border: 2px solid $button_color_1;
+                        color: $button_color_1;
+                    }
+                }
+            }
+        }
+
+        & > img {
+            width: 40vw;
+            height: 50vh;
+
+            min-width: 30vw;
+            min-height: 40vh;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .invite {
+        .invite__body {
+            padding: 1rem;
+            flex-direction: column-reverse;
+
+            .invite__info {
+                padding: 1rem;
+
+                h3 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    font-size: 0.9rem;
+                }
+
+                .buttonGroup {
+                    margin-top: 1.5rem;
+
+                    button {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

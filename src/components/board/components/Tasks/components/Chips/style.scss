@@ -1,0 +1,17 @@
+.labelChips {
+  width: fit-content;
+  margin-bottom: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  p {
+    border-radius: 3px;
+    padding: 0.2em 0.5em;
+    margin: 0;
+    margin-right: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.75rem;
+    margin-bottom: 0.3rem;
+  }
+}

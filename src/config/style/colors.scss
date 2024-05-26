@@ -1,0 +1,27 @@
+// BOARD
+
+$card_color: #ebecf0;
+$task_color-hover: #f4f5f7;
+$task_color: #ffffff;
+$task_color1: #838ea0;
+$task_color2: #67758b;
+$task_color3: #42526e;
+$task_title_color: #172b4d;
+$task_title_color1: #5e6c84;
+$light_shade: #9da5b3;
+$heading__color: #40506c;
+$text_color_1: #707c92;
+$background_color1: #f4f5f7;
+$background_color2: #eaecf0;
+$background_color3: #f5f6f8;
+$background_color4: #dfe1e6;
+$background_color5: #fafbfc;
+$background_color6: #b04632;
+
+// --
+
+$button_color_1: #0079bf;
+
+:export {
+    theme: $button_color_1;
+}

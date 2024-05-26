@@ -1,0 +1,486 @@
+@import "config/style/colors";
+
+.viewTask {
+  width: 100%;
+
+  .modal-content {
+    .modal-body {
+      background-color: $background_color1;
+      border-radius: 4px;
+      padding: 1.2em 2.5em;
+      position: relative;
+      min-height: 50rem;
+
+      .close__icon {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.8rem;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.1);
+          color: black;
+        }
+      }
+
+      .viewTask__head {
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 24px;
+        color: $heading__color;
+        box-shadow: none;
+        padding: 0.2rem;
+        overflow: hidden;
+        border: 2px solid transparent;
+        // min-height: 5rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        margin-bottom: 0.5rem;
+
+        &:read-only {
+          background-color: transparent;
+        }
+
+        &:not(:read-only) {
+          border-color: $button_color_1;
+        }
+      }
+
+      .taskLabelShow {
+        flex-direction: column;
+        margin-bottom: 2rem;
+
+        .taskLabelShow__title {
+          color: $text_color_1;
+          font-weight: 600;
+          font-size: 0.8rem;
+          margin-bottom: 0.2rem;
+        }
+
+        .taskLabelShow__label {
+          background-color: $button_color_1;
+          color: white;
+          border-radius: 3px;
+          padding: 0.5em 0.7em;
+          width: fit-content;
+          cursor: pointer;
+          font-weight: 600;
+          margin: 0;
+          font-size: 0.9rem;
+          margin-bottom: 0.3rem;
+
+          &:hover {
+            background-color: rgba($button_color_1, 0.9);
+          }
+        }
+
+        .taskLabelShow__addMore {
+          background-color: $card_color;
+          border-radius: 3px;
+          margin-left: 3px;
+          padding: 0.2em 0.5em;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgba(black, 0.1);
+          }
+        }
+      }
+
+      .viewTaskMember {
+        flex-direction: column;
+        margin-bottom: 2rem;
+
+        .viewTaskMember__title {
+          color: $text_color_1;
+          font-weight: 600;
+          font-size: 0.8rem;
+          margin-bottom: 0.2rem;
+        }
+
+        .viewTaskMember__addMore {
+          background-color: $card_color;
+          border-radius: 50%;
+          margin-left: 3px;
+          padding: 0.4em 0.5em;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgba(black, 0.1);
+          }
+        }
+      }
+
+      .descriptionSection {
+        display: flex;
+        flex-direction: column;
+
+        .descriptionSection__title {
+          font-weight: 600;
+          color: $task_title_color;
+          margin-bottom: 0.5rem;
+
+          button {
+            background-color: $background_color2;
+          }
+        }
+
+        .descriptionSection__textarea {
+          margin-bottom: 1.5rem;
+          & > textarea:read-only {
+            background: transparent;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .checkList {
+        display: flex;
+        flex-direction: column;
+
+        .checkList__title {
+          font-weight: 600;
+          color: $task_title_color;
+          margin-bottom: 0.5rem;
+        }
+
+        & > .progress {
+          height: 0.75rem;
+          font-size: 0.7rem;
+        }
+
+        .addNewItem:hover {
+          background-color: rgba(black, 0.1);
+        }
+      }
+
+      .checkListItems {
+        padding: 0.4rem;
+        transition: background-color 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(black, 0.05);
+        }
+
+        .checkListItems__title {
+          color: $task_title_color;
+
+          &.cross {
+            text-decoration: line-through;
+          }
+        }
+
+        .checkListItems__options {
+          .checklist__options {
+            cursor: pointer;
+            padding: 0rem 0.5rem;
+            border-radius: 3px;
+            transition: background-color 0.2s ease-in-out;
+
+            span {
+              margin: 0.3rem 0rem;
+              display: block;
+            }
+
+            &:hover {
+              background-color: rgba(black, 0.05);
+            }
+          }
+        }
+
+        .checkListItems__textarea {
+          textarea {
+            background-color: $background_color2;
+            border: 1px solid rgba(black, 0.1);
+          }
+        }
+      }
+
+      .commentSection {
+        margin-top: 1rem;
+        $avatarGap: 0.5rem;
+
+        .commentSection__title {
+          color: $task_title_color;
+          font-weight: 600;
+          margin: 0;
+        }
+
+        .commentSection__showDetails {
+          &:hover {
+            background-color: rgba(black, 0.1);
+          }
+        }
+
+        .commentSection__comment {
+          display: flex;
+          margin-top: 1rem;
+          margin-bottom: 1.5rem;
+
+          .textarea__wrapper {
+            width: 100%;
+            background-color: white;
+            margin-left: $avatarGap;
+            border-radius: 3px;
+            border: 1px solid rgba(black, 0.1);
+            overflow: hidden;
+
+            &.add_shadow {
+              box-shadow: 0px 5px 5px rgba(black, 0.1);
+            }
+
+            textarea {
+              height: 2rem;
+              font-size: 0.9rem;
+              overflow: hidden;
+            }
+
+            button {
+              background-color: $button_color_1;
+              color: white;
+              font-size: 0.9rem;
+              margin: 0.5rem;
+              margin-top: 1rem;
+
+              display: none;
+            }
+
+            & > textarea:focus + button {
+              display: block;
+            }
+
+            & > textarea:not(:placeholder-shown) + button {
+              display: block;
+            }
+          }
+        }
+
+        .userComments {
+          margin-top: 0.3rem;
+          display: flex;
+
+          .userComments__body {
+            margin-left: $avatarGap;
+            padding-top: 0.2rem;
+            flex: 1;
+
+            .userComments__title {
+              font-size: 0.9rem;
+              margin-bottom: 0.1rem;
+
+              span:first-child {
+                font-weight: 800;
+                margin-right: 0.4rem;
+                color: $task_title_color;
+              }
+
+              span:last-child {
+                margin-right: 0.4rem;
+                font-size: 0.8rem;
+                color: $heading__color;
+              }
+            }
+
+            .userComments__text:hover ~ .options {
+              pointer-events: auto;
+              visibility: visible;
+            }
+
+            & > .options {
+              margin-top: 0rem;
+              font-size: 0.8rem;
+              padding: 0rem 0.5rem;
+              color: $heading__color;
+
+              pointer-events: none;
+              visibility: hidden;
+
+              p {
+                margin: 0rem;
+                font-size: inherit;
+                cursor: pointer;
+                transition: 0.3s ease-in-out all;
+                width: fit-content;
+
+                &:hover {
+                  text-decoration: underline;
+                  color: inherit;
+                  color: black;
+                  pointer-events: auto;
+                  visibility: visible;
+                }
+              }
+            }
+
+            .userComments__text {
+              padding: 0.5em 1em;
+              background-color: white;
+              border: 1px solid rgba(black, 0.1);
+              line-height: 20px;
+              font-size: 0.9rem;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+
+      .cardOptions {
+        display: flex;
+        flex-direction: column;
+
+        .cardOptions__title {
+          font-weight: 600;
+          font-size: 0.7rem;
+          color: $heading__color;
+          margin-bottom: 0.5rem;
+        }
+
+        .cardOptions__button {
+          text-align: left;
+          margin-bottom: 0.5rem;
+          color: $heading__color;
+          font-size: 0.9rem;
+          background-color: $background_color2;
+
+          span {
+            margin-left: 0.3rem;
+          }
+
+          &:hover {
+            background-color: rgba(black, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .viewTask {
+    margin: 0px !important;
+    height: auto !important;
+    max-height: auto !important;
+    max-width: 100% !important;
+
+    .modal-content {
+      .modal-body {
+        border-radius: 0px;
+        padding: 1.2em 1.5em;
+        position: relative;
+        min-height: 100vh;
+
+        .close__icon {
+          top: 1.6rem;
+          right: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 421px) {
+  .viewTask {
+    .modal-content {
+      .modal-body {
+        .viewTask__head {
+          font-weight: 600;
+          font-size: 1.1rem;
+        }
+
+        .taskLabelShow {
+          flex-direction: column;
+          margin-bottom: 2rem;
+
+          .taskLabelShow__label {
+            padding: 0.3em 0.5em;
+          }
+        }
+
+        .descriptionSection {
+          .descriptionSection__title {
+            margin-bottom: 0.3rem;
+
+            button {
+              font-size: 0.8rem;
+            }
+          }
+        }
+
+        .checkList {
+          .checkList__title {
+            font-size: 0.9rem;
+          }
+
+          & > .progress {
+            height: 0.75rem;
+            font-size: 0.7rem;
+          }
+
+          #Checklist-delete-dropdown-button {
+            font-size: 0.8rem !important;
+          }
+
+          .addNewItem {
+            font-size: 0.8rem !important;
+          }
+        }
+
+        .checkListItems {
+          .checkListItems__title {
+            font-size: 0.9rem;
+            font-weight: 500;
+          }
+
+          .checkListItems__textarea {
+            textarea {
+              background-color: $background_color2;
+              border: 1px solid rgba(black, 0.1);
+            }
+
+            button {
+              font-size: 0.8rem;
+            }
+          }
+        }
+
+        .commentSection {
+          margin-top: 1rem;
+          $avatarGap: 0.5rem;
+
+          .commentSection__comment {
+            .textarea__wrapper {
+              button {
+                font-size: 0.8rem;
+              }
+            }
+          }
+
+          .userComments {
+            .userComments__body {
+              .userComments__title {
+                font-size: 0.8rem;
+              }
+
+              & > .options {
+                padding: 0rem 0.3rem;
+              }
+
+              .userComments__text {
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+
+        .cardOptions {
+          .cardOptions__button {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+}

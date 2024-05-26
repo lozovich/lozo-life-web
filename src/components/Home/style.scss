@@ -1,0 +1,67 @@
+@import "config/style/colors";
+
+.home {
+    .container {
+        padding: 1rem;
+
+        .empty__content {
+            padding: 3rem 2rem;
+            background: radial-gradient(circle, rgba(0, 121, 191, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            border-radius: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                margin: 0;
+                color: white;
+            }
+        }
+
+        .container__title {
+            font-weight: 600;
+            color: $task_title_color;
+            font-size: 1.1rem;
+        }
+
+        .board__container {
+            position: relative;
+            background-color: $heading__color;
+            color: white;
+            width: 100%;
+            max-width: 10rem;
+            min-height: 5rem;
+            margin-bottom: 0.2rem;
+            border-radius: 3px;
+            padding: 0.5rem;
+            margin-right: 0.5rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                transform: scale(1.05);
+                border-color: rgba(black, 0.3);
+                box-shadow: 0px 5px 10px rgba(black, 0.1);
+            }
+
+            &.add {
+                background-color: $background_color4;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & > p {
+                    font-weight: 500;
+                    margin: 0;
+                    color: $heading__color;
+                }
+            }
+
+            .board__title {
+                font-weight: 600;
+            }
+        }
+    }
+}

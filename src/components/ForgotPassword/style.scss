@@ -1,0 +1,56 @@
+@import "components/Login/style.scss";
+
+.forgotPassword {
+    @extend .loginPage;
+
+    .loginPage__body {
+        .box__container {
+            padding: 5px;
+            min-height: 200px;
+            position: relative;
+            overflow: hidden;
+
+            .box {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%) translateX(-110%);
+                pointer-events: none;
+                opacity: 0;
+                transition: 0.3s ease-in;
+                transition-property: transform, opacity;
+
+                &.active {
+                    transform: translateY(-50%) translateX(0%);
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+            }
+        }
+
+        .otp {
+            input {
+                margin-right: 0.5rem;
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.4rem;
+            }
+        }
+
+        .password {
+            flex-direction: column;
+            display: flex;
+            width: 100%;
+            input {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    input {
+        &.error__border {
+            border: 2px solid rgb(217, 53, 53);
+            animation: errorAnimation 0.1s ease-in-out;
+        }
+    }
+}

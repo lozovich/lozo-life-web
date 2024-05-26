@@ -1,0 +1,12 @@
+@import "components/Login/style.scss";
+
+.signup__page {
+    @extend .loginPage;
+
+    input {
+        &.error__border {
+            border: 2px solid rgb(217, 53, 53);
+            animation: errorAnimation 0.1s ease-in-out;
+        }
+    }
+}

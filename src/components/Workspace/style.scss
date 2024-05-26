@@ -1,0 +1,70 @@
+@import "config/style/colors";
+
+.workspaceModal {
+    .workspaceModal__body {
+        display: flex;
+
+        .workspaceModal__form-container {
+            width: 100%;
+            max-width: 300px;
+
+            .workspace__form-title {
+                font-weight: 600;
+                font-size: 1.4rem;
+            }
+
+            .workspace__form-sub-title {
+                color: $light_shade;
+            }
+
+            textarea {
+                background-color: $background_color5;
+                border: 2px solid rgba(black, 0.1);
+
+                &:focus {
+                    border-color: $button_color_1;
+                }
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+
+        .workspaceModal__illustrate {
+            flex: 1;
+
+            img {
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .close__icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .workspaceModal {
+        .workspaceModal__body {
+            flex-direction: column-reverse;
+
+            .workspaceModal__form-container {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .close__icon {
+                position: absolute;
+                top: 20px;
+                right: 30px;
+                font-size: 1.3rem;
+            }
+        }
+    }
+}

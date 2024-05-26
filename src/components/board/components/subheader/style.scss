@@ -1,0 +1,362 @@
+@import "../../../../config/style/colors.scss";
+
+.sub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 2rem;
+    background-color: transparent;
+    padding: 0rem 0.3rem;
+    margin-bottom: 0.5rem;
+
+    .left_sub_header {
+        display: flex;
+        align-items: center;
+
+        .boardIcon {
+            margin-right: 10px;
+        }
+
+        .board__name {
+            text-transform: uppercase;
+            color: white;
+            font-weight: 600;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .memberList {
+            display: flex;
+
+            .avatar__div {
+                font-size: 0.8rem;
+                box-shadow: 0px 0px 20px rgba(black, 0.1);
+                &:not(:first-child) {
+                    margin-left: -10px;
+                }
+            }
+
+            .avatar__img {
+                font-size: 0.8rem;
+                box-shadow: 0px 0px 20px rgba(black, 0.1);
+                padding: 0;
+                border: 2px solid rgba(white, 1);
+                &:not(:first-child) {
+                    margin-left: -10px;
+                }
+            }
+        }
+    }
+
+    .right-sub-header {
+        .more__option {
+            position: fixed;
+            top: 0;
+            width: 300px;
+            height: 100%;
+            background-color: $task_color-hover;
+            right: -100%;
+            pointer-events: none;
+            transition: all 0.3s ease-in-out;
+            box-shadow: -10px 0px 40px rgba(black, 0.1);
+            z-index: 1;
+
+            &.show {
+                right: 0%;
+                pointer-events: auto;
+            }
+
+            .more__option-body {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .head {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    border-bottom: 1px solid rgba(black, 0.1);
+                    justify-content: space-between;
+                    padding: 0.3rem 0rem;
+
+                    span {
+                        flex: 1;
+                        text-align: center;
+                    }
+
+                    i {
+                        font-size: 1.5rem;
+                        margin: 0rem 0.2rem;
+
+                        &:hover {
+                            color: black;
+                        }
+
+                        cursor: pointer;
+                    }
+                }
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    padding: 0rem 0.3rem;
+                    height: 100%;
+
+                    .info__menu {
+                        display: flex;
+                        font-weight: 600;
+                        padding: 0.3rem 1rem;
+                        margin-top: 1rem;
+                        color: $task_color3;
+                        cursor: pointer;
+                        border-radius: 2px;
+
+                        .icon {
+                            display: block;
+                            height: 15px;
+                            width: 15px;
+                            margin: auto 10px;
+                            border-radius: 4px;
+                            margin-left: 0px;
+                        }
+
+                        i {
+                            margin-right: 10px;
+                        }
+
+                        p {
+                            margin: 0;
+                        }
+
+                        &:hover {
+                            background-color: rgba(black, 0.1);
+                        }
+                    }
+                }
+
+                .panel {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 100%;
+                    top: 0;
+                    pointer-events: none;
+                    transition: all 0.3s ease-in-out;
+                    background: $task_color-hover;
+
+                    &.show {
+                        pointer-events: auto;
+                        left: 0;
+                    }
+
+                    .panel__body {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        overflow: visible;
+
+                        .grid_color {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            gap: 5px;
+                            grid-template-rows: 100px;
+                            padding: 5px;
+                            overflow-y: auto;
+
+                            div {
+                                border-radius: 5px;
+                                cursor: pointer;
+                                height: 100px;
+                                transition: opacity 0.3s ease-in-out;
+
+                                &:hover {
+                                    opacity: 0.8;
+                                }
+                            }
+                        }
+
+                        .aboutBoard {
+                            padding: 0.5rem 1rem;
+
+                            .title {
+                                display: flex;
+                                font-weight: 600;
+                                font-size: 1rem;
+
+                                i {
+                                    margin-right: 10px;
+                                    font-weight: inherit;
+                                }
+                            }
+
+                            .aboutBoard__info {
+                                display: flex;
+                                width: 100%;
+                                align-items: center;
+                                flex-direction: column;
+
+                                .image__container {
+                                    position: relative;
+                                    margin-bottom: 1rem;
+                                    display: inline-block;
+
+                                    .imageLoader {
+                                        background-color: rgba(white, 1);
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        border-radius: 50%;
+                                    }
+
+                                    label {
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 80%;
+                                        background-color: white;
+                                        color: black;
+                                        border-radius: 50%;
+                                        width: 1.4rem;
+                                        height: 1.4rem;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        box-shadow: 0px 0px 30px rgba(black, 0.1);
+                                        cursor: pointer;
+                                        border: 1px solid transparent;
+                                        transition: 0.3s all ease-in-out;
+
+                                        &:hover {
+                                            border-color: gray;
+                                        }
+                                    }
+
+                                    .avatar__div {
+                                        font-size: 1.5rem;
+                                        border: 2px solid white;
+                                    }
+                                    .avatar__img {
+                                        font-size: 1.5rem;
+                                        border: 2px solid white;
+                                    }
+                                }
+
+                                .form__group {
+                                    input {
+                                        margin-bottom: 10px;
+                                        border-radius: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .white__card {
+        background-color: rgba(255, 255, 255, 0.3);
+        color: #fff;
+        padding: 0.5em 0.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        border-radius: 3px;
+
+        p {
+            margin: 0;
+            font-size: inherit;
+        }
+    }
+
+    .vr {
+        border-left: 1px solid white;
+        height: 20px;
+        margin: auto 10px;
+    }
+}
+
+@media screen and (max-width: 601px) {
+    .sub-header {
+        .white__card {
+            font-size: 0.7rem;
+        }
+
+        .left_sub_header {
+            display: flex;
+            align-items: center;
+
+            .board__name {
+                font-weight: 900;
+                font-size: 1rem;
+            }
+
+            .boardIcon {
+                margin-right: 4px;
+            }
+
+            .share__button {
+                font-size: 0.7rem;
+            }
+
+            .memberList {
+                display: flex;
+                margin-top: 0.5rem;
+
+                .avatar__div {
+                    font-size: 0.7rem;
+                }
+
+                .avatar__img {
+                    font-size: 0.7rem;
+                }
+            }
+        }
+
+        .right-sub-header {
+            .more__option {
+                width: 100%;
+
+                .more__option-body {
+                    .panel {
+                        .panel__body {
+                            overflow: auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        .vr {
+            margin: auto 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .sub-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .left_sub_header {
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .right-sub-header {
+            margin-bottom: 0.5rem;
+            .more__option {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}

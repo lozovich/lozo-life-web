@@ -1,0 +1,161 @@
+@import "config/style/colors.scss";
+
+.board {
+  background-color: lightslategrey;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease-in-out;
+  transition-property: background-color, background;
+
+  .board__body {
+    overflow-y: hidden;
+    overflow-x: auto;
+    height: 100%;
+    margin-bottom: 0.3rem;
+    padding-bottom: 0.5rem;
+
+    &::-webkit-scrollbar {
+      height: 0.8rem; /* width of the entire scrollbar */
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(black, 0.1); /* color of the tracking area */
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(white, 0.6); /* color of the scroll thumb */
+      border-radius: 5px; /* roundness of the scroll thumb */
+      border: none; /* creates padding around scroll thumb */
+    }
+
+    .boardCards__body {
+      padding-top: 0.8rem;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 0rem 0.4rem;
+      margin-right: 0.1rem;
+      position: relative;
+
+      &::-webkit-scrollbar {
+        width: 0.5rem; /* width of the entire scrollbar */
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(black, 0.05); /* color of the tracking area */
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(black, 0.2); /* color of the scroll thumb */
+        border-radius: 5px; /* roundness of the scroll thumb */
+        border: none; /* creates padding around scroll thumb */
+        cursor: default;
+      }
+
+      .add__task {
+        display: flex;
+        color: $light_shade;
+        cursor: pointer;
+        border-radius: 3px;
+        padding: 0.2em 0em;
+
+        & > i {
+          margin-left: 0.2rem;
+        }
+
+        & > p {
+          margin: 0;
+          margin-left: 0.1rem;
+        }
+
+        &:hover {
+          background-color: rgba(black, 0.05);
+          color: $task_title_color;
+        }
+      }
+    }
+
+    .addList {
+      @extend .boardCards__body, .addList;
+      width: 17rem;
+      min-width: 17rem;
+
+      .addList__body {
+        width: 100%;
+        margin: 0.2rem 0.3rem;
+        border-radius: 3px;
+        background-color: rgba(white, 0.2);
+        overflow: hidden;
+
+        & > button {
+          width: 100%;
+          text-align: left;
+          color: white;
+          background-color: transparent;
+          padding: 9px;
+        }
+
+        .addList__form {
+          padding: 9px;
+          background-color: $card_color;
+
+          & > input {
+            box-shadow: 0px 2px 1px rgba(black, 0.1);
+            border: 2px solid transparent;
+            color: black;
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            outline: none;
+            width: 100%;
+            border-radius: 3px;
+            padding: 0.2em;
+
+            &:focus {
+              border-color: $button_color_1;
+            }
+          }
+
+          button {
+            background-color: $button_color_1;
+            color: white;
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .board {
+    .board__body {
+      .boardCards__body {
+        .add__task {
+          & > i {
+            font-size: 0.9rem;
+          }
+          & > p {
+            font-size: 0.9rem;
+          }
+        }
+      }
+
+      .addList {
+        .addList__body {
+          & > button {
+            font-size: 0.8rem;
+          }
+
+          .addList__form {
+            button {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

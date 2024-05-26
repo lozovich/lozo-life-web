@@ -1,0 +1,169 @@
+@import "config/style/colors";
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem;
+    background-color: $button_color_1;
+
+    .header__brand {
+        font-weight: 900;
+        font-size: 1.5rem;
+        color: white;
+        text-shadow: 0px 0px 10px rgba(black, 0.1);
+    }
+
+    .header__body {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+        justify-content: flex-end;
+
+        .add__workspace {
+            background-color: transparent;
+            border: 2px solid transparent;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                border-color: white;
+            }
+        }
+
+        .header__dropdown {
+            .dropdown__body {
+                padding: 0.6rem 0.5rem;
+                position: absolute !important;
+                top: 100%;
+                bottom: auto !important;
+                border-radius: 10px !important;
+
+                .avatarDropdown {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    .profile__details {
+                        display: flex;
+                        align-items: center;
+
+                        .profile__info {
+                            flex: 1;
+                            margin-left: 0.5rem;
+
+                            p {
+                                margin-bottom: 0rem;
+
+                                &:first-child {
+                                    color: $task_title_color;
+                                }
+
+                                &:last-child {
+                                    color: $light_shade;
+                                }
+                            }
+                        }
+                    }
+
+                    .avatarDropdown__list {
+                        list-style: none;
+                        color: $task_title_color;
+                        padding: 0;
+                        margin: 0;
+
+                        .avatarDropdown__list-item {
+                            margin: 0;
+                            cursor: pointer;
+                            padding: 0.5rem 1rem;
+                            border-radius: 3px;
+                            transition: all 0.2s ease;
+
+                            p {
+                                margin: 0rem;
+                            }
+
+                            &:hover {
+                                background-color: rgba(black, 0.1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .avatar__div {
+            width: 2.4em !important;
+            height: 2.4em !important;
+        }
+
+        .avatar__img {
+            width: 2.4em !important;
+            height: 2.4em !important;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__dropdown {
+        .dropdown__body {
+            padding: 0.6rem 0.5rem;
+            min-width: 15rem !important;
+
+            .avatarDropdown {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                li {
+                    font-size: 0.9rem;
+                }
+
+                .profile__details {
+                    display: flex;
+                    align-items: center;
+
+                    .profile__info {
+                        flex: 1;
+                        margin-left: 0.5rem;
+
+                        p {
+                            margin-bottom: 0rem;
+                            font-size: 0.9rem;
+
+                            &:first-child {
+                                color: $task_title_color;
+                            }
+
+                            &:last-child {
+                                color: $light_shade;
+                            }
+                        }
+                    }
+                }
+
+                .avatarDropdown__list {
+                    list-style: none;
+                    color: $task_title_color;
+                    padding: 0;
+                    margin: 0;
+
+                    .avatarDropdown__list-item {
+                        margin: 0;
+                        cursor: pointer;
+                        padding: 0.5rem 1rem;
+                        border-radius: 3px;
+                        transition: all 0.2s ease;
+
+                        p {
+                            margin: 0rem;
+                        }
+
+                        &:hover {
+                            background-color: rgba(black, 0.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

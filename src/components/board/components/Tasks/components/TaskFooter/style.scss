@@ -1,0 +1,73 @@
+.taskFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 0.8rem;
+
+  .info {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    & > p {
+      margin: 0;
+      font-size: 0.8rem;
+      width: fit-content;
+      margin-right: 0.5rem;
+      font-weight: 600;
+
+      & > i {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .taskMemberList {
+    max-width: 120px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .avatar__div {
+      font-size: 0.7rem;
+      margin-right: 0.1rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .avatar__img {
+      font-size: 0.7rem;
+      margin-right: 0.1rem;
+      margin-bottom: 0.1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .taskFooter {
+    margin-top: 0.3rem;
+
+    .info {
+      & > p {
+        margin: 0;
+        font-size: 0.7rem;
+        margin-right: 0.5rem;
+
+        & > i {
+          font-size: inherit;
+        }
+      }
+    }
+
+    .taskMemberList {
+      max-width: 100px;
+
+      .avatar__div {
+        font-size: 0.6rem;
+      }
+
+      .avatar__img {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
